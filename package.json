@@ -7,7 +7,7 @@
     "start": "yarn client & yarn server",
     "build": "yarn workspace client build & yarn workspace server build",
     "client": "yarn workspace client dev",
-    "server": "yarn workspace server start",
+    "server": "yarn workspace server start:dev",
     "lint": "yarn workspace client lint & yarn workspace server lint",
     "prepare": "husky install"
   },
