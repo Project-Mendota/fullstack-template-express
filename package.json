@@ -1,5 +1,5 @@
 {
-  "name": "mendota-bbs",
+  "name": "instshare",
   "version": "0.1.0",
   "private": true,
   "license": "UNLICENSED",
@@ -8,12 +8,14 @@
     "build": "yarn workspace client build & yarn workspace server build",
     "client": "yarn workspace client dev",
     "server": "yarn workspace server start:dev",
-    "lint": "yarn workspace client lint & yarn workspace server lint",
-    "prepare": "husky install"
+    "lint": "yarn workspace server lint && yarn workspace client lint && yarn workspace common lint",
+    "prepare": "husky install",
+    "build_common": "yarn workspace common build"
   },
   "workspaces": [
     "client",
-    "server"
+    "server",
+    "common"
   ],
   "husky": {
     "hooks": {
