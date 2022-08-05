@@ -1,4 +1,4 @@
-# Mendota BBS
+# Node.js Fullstack template
 
 ## Install dependencies
 
