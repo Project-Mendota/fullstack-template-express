@@ -4,11 +4,11 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "start": "yarn client & yarn server",
-    "build": "yarn workspace client build & yarn workspace server build",
+    "start": "concurrently \"yarn client\" \"yarn server\"",
+    "build": "concurrently \"yarn workspace client build\" \"yarn workspace server build\"",
     "client": "yarn workspace client dev",
     "server": "yarn workspace server start:dev",
-    "lint": "yarn workspace server lint && yarn workspace client lint && yarn workspace common lint",
+    "lint": "concurrently \"yarn workspace server lint\" \"yarn workspace client lint\" \"yarn workspace common lint\"",
     "prepare": "husky install",
     "build_common": "yarn workspace common build"
   },
@@ -38,6 +38,7 @@
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
     "commitizen": "^4.2.4",
+    "concurrently": "^7.3.0",
     "cz-conventional-changelog": "^3.3.0",
     "husky": "^7.0.1",
     "lint-staged": "^11.0.1"
